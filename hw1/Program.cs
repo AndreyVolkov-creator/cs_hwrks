@@ -31,19 +31,38 @@
 
 #region 3
 
-    int a;
+    // int a;
+
+    // Console.WriteLine("Введите ваше число");
+    // a = Convert.ToInt32(Console.ReadLine());
+
+    // if ((a % 2)==0)
+    // {
+    //     Console.WriteLine("число четное");
+           
+    // }
+    // else
+    // {
+    //     Console.WriteLine("Число нечетное");
+    // }
+    
+#endregion
+
+#region 4
+
+    int a, b;
 
     Console.WriteLine("Введите ваше число");
     a = Convert.ToInt32(Console.ReadLine());
 
-    if ((a % 2)==0)
+    for (int i = 1; i <=a ; i++)
     {
-        Console.WriteLine("число четное");
-           
-    }
-    else
-    {
-        Console.WriteLine("Число нечетное");
+        b = i;
+        if (b%2 == 0)
+        { 
+            Console.WriteLine(b);
+        }
+        
     }
     
 #endregion
