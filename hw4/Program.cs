@@ -4,31 +4,57 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-    int num, degree;
+    // int num, degree;
 
-    Console.WriteLine("Введите число");
-    num = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Введите степень числа");
-    degree = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(NumDegree(num, degree));
-
-
+    // Console.WriteLine("Введите число");
+    // num = Convert.ToInt32(Console.ReadLine());
+    // Console.WriteLine("Введите степень числа");
+    // degree = Convert.ToInt32(Console.ReadLine());
+    // Console.WriteLine(NumDegree(num, degree));
 
 
-    int NumDegree(int a, int b)
-    {
-        int i = 0;
-        int result = 1;
-        for (i = 1; i <= b; i++)
-            result *= a;
 
-        return result;
-    }
+
+    // int NumDegree(int a, int b)
+    // {
+    //     int i = 0;
+    //     int result = 1;
+    //     for (i = 1; i <= b; i++)
+    //         result *= a;
+
+    //     return result;
+    // }
     
 #endregion
 
 #region 2
     
+// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+    int num;
+
+    Console.WriteLine("Введите число");
+    num = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(NumSumm(num));
+
+
+
+
+    int NumSumm(int a)
+    {
+        int result = 0;
+        while (a > 0)
+        {
+            result += a % 10;
+            a /= 10;
+        }
+
+        return result;
+    }
+
 #endregion
 
 #region 3
