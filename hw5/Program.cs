@@ -45,21 +45,62 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-int[] array = new int[4];
+// int[] array = new int[4];
+// FillArray(array);
+// PrintArray(array);
+// Console.WriteLine($"Сумма элементов на нечетных позициях равна {Summ(array)}");
+
+
+
+
+// void FillArray(int[] array)
+// {
+//     for(int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(0, 21);
+// }
+
+// void PrintArray(int[] array)
+// {
+//     foreach (int item in array)
+//     {
+//         Console.Write($"{item} ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int Summ(int[] array)
+// {
+//     int result = 0;
+
+//     for(int i = 1; i < array.Length; i += 2)
+//         result += array[i];
+
+//     return result;
+// }
+    
+#endregion
+
+#region 3
+
+//  Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+double[] array = new double[5];
 FillArray(array);
 PrintArray(array);
-Console.WriteLine($"Сумма элементов на нечетных позициях равна {Summ(array)}");
+double[] res = Differ(array);
+Console.WriteLine($"Разница между макс и мин значением элементов массива равна {res[0]} - {res[1]} = {res[2]}");
 
 
 
 
-void FillArray(int[] array)
+void FillArray(double[] array)
 {
     for(int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(0, 21);
+        array[i] = RandomDouble(0, 100);
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     foreach (int item in array)
     {
@@ -68,18 +109,32 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-int Summ(int[] array)
+double[] Differ(double[] array)
 {
-    int result = 0;
+    double result = 0;
+    double max = 0;
+    double min = 100;
 
-    for(int i = 1; i < array.Length; i += 2)
-        result += array[i];
+    foreach (int item in array)
+    {
+        if(max < item) max = item;
+    }
+    foreach (int item in array)
+    {
+        if(min > item) min = item;
+    }
 
-    return result;
+    result = max - min;
+    double[] newArray = {max, min, result};
+
+    return newArray;
 }
-    
-#endregion
 
-#region 3
-    
+double RandomDouble(double minValue, double maxValue)
+{
+    Random random = new Random();
+
+	return minValue + (maxValue - minValue) * random.NextDouble();
+}
+
 #endregion
