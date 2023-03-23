@@ -102,7 +102,7 @@ void FillArray(double[] array)
 
 void PrintArray(double[] array)
 {
-    foreach (int item in array)
+    foreach (double item in array)
     {
         Console.Write($"{item} ");
     }
