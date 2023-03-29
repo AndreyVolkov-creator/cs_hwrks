@@ -99,7 +99,7 @@ void PrintArrayThirdTask(double[,] array)
 
 Console.WriteLine("Выберите, какую задачу вы хотите посмотреть, 1, 2 или 3?");
 string choice = String.Empty;
-choice = Console.ReadLine(); 
+choice = Console.ReadLine()!; 
 
 if (choice == "1")
 {
