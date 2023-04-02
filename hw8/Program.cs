@@ -8,37 +8,92 @@
 // 9 5 3 2
 // 8 4 4 2
 
-int[,] array = new int[4, 4];
-FillArrayFirstTask(array);
-PrintArrayFirstTask(array);
-Console.WriteLine();
-Sort(array);
-PrintArrayFirstTask(array);
+// int[,] array = new int[4, 4];
+// FillArrayFirstTask(array);
+// PrintArrayFirstTask(array);
+// Console.WriteLine();
+// Sort(array);
+// PrintArrayFirstTask(array);
 
 
 
 
-void Sort(int[,] array)
+// void Sort(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1) - 1; j++)
+//         {
+//             for (int z = 0; z < array.GetLength(1) - 1; z++)
+//             {
+//                 if (array[i, z] < array[i, z + 1]) 
+//                 {
+//                     int temp = 0;
+//                     temp = array[i, z];
+//                     array[i, z] = array[i, z + 1];
+//                     array[i, z + 1] = temp;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// void FillArrayFirstTask(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void PrintArrayFirstTask(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine("");
+//     }
+// }
+//---------------------------------------------------------------------------------------------------------------------
+// Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+int[,] array = new int[3,2];
+FillArraySecondTask(array);
+PrintArraySecondTask(array);
+int minSum = Int32.MaxValue;
+int rowNumber = 0;
+
+for (int i = 0; i < array.GetLength(0); i++)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    int sum = 0;
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        for (int j = 0; j < array.GetLength(1) - 1; j++)
-        {
-            for (int z = 0; z < array.GetLength(1) - 1; z++)
-            {
-                if (array[i, z] < array[i, z + 1]) 
-                {
-                    int temp = 0;
-                    temp = array[i, z];
-                    array[i, z] = array[i, z + 1];
-                    array[i, z + 1] = temp;
-                }
-            }
-        }
+        sum += array[i, j];        
+    }
+    if (sum < minSum)
+    {
+        minSum = sum;
+        rowNumber++;
     }
 }
+Console.WriteLine($"строка с наименьшей суммой елементов: {rowNumber}, с суммой елементов равной {minSum}");
 
-void FillArrayFirstTask(int[,] array)
+
+
+
+void FillArraySecondTask(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -49,7 +104,7 @@ void FillArrayFirstTask(int[,] array)
     }
 }
 
-void PrintArrayFirstTask(int[,] array)
+void PrintArraySecondTask(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
