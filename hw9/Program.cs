@@ -23,19 +23,42 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
+// Console.WriteLine("Введите первое число");
+// int minBorder = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите второе число");
+// int maxBorder = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+// int SummRec(int num1, int num2)
+// {
+//     int sum = 0;
+//     if(num1>num2) return sum;
+//     return sum += num1 + SummRec(num1+1, num2);
+// }
+
+// Console.WriteLine(SummRec(minBorder, maxBorder));
+
+//--------------------------------------------------------------------------------------
+
+// Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+
 Console.WriteLine("Введите первое число");
-int minBorder = Convert.ToInt32(Console.ReadLine());
+int firstNum = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число");
-int maxBorder = Convert.ToInt32(Console.ReadLine());
+int secondNum = Convert.ToInt32(Console.ReadLine());
 
 
 
 
-int SummRec(int num1, int num2)
+int AccermanFunc(int num1, int num2)
 {
-    int sum = 0;
-    if(num1>num2) return sum;
-    return sum += num1 + SummRec(num1+1, num2);
+    if (num1 == 0) return num2 + 1;
+    else if ((num1 != 0) && (num2 == 0)) return AccermanFunc(num1 - 1, 1);
+    else return AccermanFunc(num1 - 1, AccermanFunc(num1, num2 - 1));
 }
 
-Console.WriteLine(SummRec(minBorder, maxBorder));
+Console.WriteLine(AccermanFunc(firstNum, secondNum));
